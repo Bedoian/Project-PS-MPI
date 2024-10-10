@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import icon from '../../../public/Image/icon.png';
 import { NavLink } from 'react-router-dom';
-
+import head from '../../../public/Image/Head.avif'
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,35 +39,44 @@ const Nav = () => {
                     </div>
 
                     {/* Mobile Menu */}
-                    <div
-                        className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:text-start lg:border-none border-2 text-center ${isOpen ? 'translate-x-0 opacity-100 block' : 'opacity-0 -translate-x-full lg:flex lg:opacity-100 lg:translate-x-0'}`}
-                    >
-                        <ul className={`${isOpen ? 'block' : 'lg:flex lg:items-center lg:space-x-4'}`}>
-                            <NavLink
-                                to="/"
-                                className={({ isActive }) =>
-                                    `block lg:inline-block px-3 text-[17px] text-purple-900 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700 ${isActive ? 'bg-purple-300  border-2 border-purple-700 rounded-none font-semibold' : ''}`
-                                }
-                            >
-                                Home
-                            </NavLink>
-                            <NavLink
-                                to="/gallery"
-                                className={({ isActive }) =>
-                                    `block lg:inline-block px-3 text-[17px] text-purple-900 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700 ${isActive ? 'bg-purple-300  border-2 border-purple-700 rounded-none font-semibold' : ''}`
-                                }
-                            >
-                                Gallery
-                            </NavLink>
-                            <NavLink
-                                to="/allFoods"
-                                className={({ isActive }) =>
-                                    `block lg:inline-block px-3 text-[17px] text-purple-900 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700 ${isActive ? 'bg-purple-300  border-2 border-purple-700 rounded-none font-semibold' : ''}`
-                                }
-                            >
-                                Donation
-                            </NavLink>
-                        </ul>
+                    <div className=''>
+                        <div
+                            className={`
+                            absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:text-start lg:border-none border-2 text-center ${isOpen ? 'translate-x-0 opacity-100 block' : 'opacity-0 -translate-x-full lg:flex lg:opacity-100 lg:translate-x-0'}`}
+                        >
+                            <ul className={`  ${isOpen ? 'block' : 'lg:flex lg:items-center lg:space-x-4'}`}>
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) =>
+                                        `block lg:inline-block px-3 text-[17px] text-purple-900 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700 ${isActive ? 'bg-purple-300  border-2 border-purple-700 rounded-none font-semibold' : ''}`
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+                                <NavLink
+                                    to="/about"
+                                    className={({ isActive }) =>
+                                        `block lg:inline-block px-3 text-[17px] text-purple-900 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700 ${isActive ? 'bg-purple-300  border-2 border-purple-700 rounded-none font-semibold' : ''}`
+                                    }
+                                >
+                                    About Us
+                                </NavLink>
+                                <NavLink
+                                    to="/donation"
+                                    className={({ isActive }) =>
+                                        `block lg:inline-block px-3 text-[17px] text-purple-900 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 dark:hover:bg-gray-700 ${isActive ? 'bg-purple-300  border-2 border-purple-700 rounded-none font-semibold' : ''}`
+                                    }
+                                >
+                                    DashBoard
+                                </NavLink>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className='flex gap-4'>
+                        <button className='btn rounded-full text-white bg-green-400 border-2'>Login</button>
+                        <div>
+                            <img className='relative bottom-2 w-16 h-16 rounded-full' src={head} alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
